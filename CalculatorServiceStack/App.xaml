@@ -1,0 +1,161 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="CalculatorServiceStack.App" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             d1p1:Ignorable="d"
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:viewModel="clr-namespace:CalculatorServiceStack.ViewModels"
+             >
+<Application.Resources>
+        <Style x:Key="BotonStyle" TargetType="Button">
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="MiGrid" Background="{TemplateBinding Background}">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="MiGrid" 
+                                                                           Storyboard.TargetProperty="(Grid.Background)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Black"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed"/>
+
+                                </VisualStateGroup>
+
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="Borde" BorderBrush="Gray" BorderThickness="0.1">
+                                <Grid>
+                                    <TextBlock Text="{TemplateBinding Content}" 
+                                               Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}" 
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="HistoryBarBotonStyle" TargetType="Button">
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="MiGrid" Background="{TemplateBinding Background}">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="MiGrid" 
+                                                                           Storyboard.TargetProperty="(Grid.Background)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Black"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed"/>
+
+                                </VisualStateGroup>
+
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="Borde" BorderBrush="Gray" BorderThickness="0.1">
+                                <Grid>
+                                    <TextBlock Text="{TemplateBinding Content}" 
+                                               Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}" 
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+
+        <Style x:Name="HistoryButtonStyle" TargetType="Button">
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="MiGrid" Background="{TemplateBinding Background}">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="MiGrid" 
+                                                                           Storyboard.TargetProperty="(Grid.Background)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Black"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed"/>
+
+                                </VisualStateGroup>
+
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="Borde" BorderBrush="Gray" BorderThickness="0.1">
+                                <Grid>
+                                    <Grid Name="backgroundGrid" Width="48" Height="48" Visibility="Collapsed" />
+                                    <Path Data="M18.000955,6.5349891C18.552924,6.5349891,19.000898,6.9819901,19.000898,7.534991L19.000898,13.864005 24.087609,16.980011C24.558583,17.269012 24.707573,17.884014 24.418591,18.355015 24.229601,18.663015 23.901619,18.833015 23.564639,18.833015 23.386649,18.833015 23.20666,18.786016 23.043669,18.686016L17.001011,14.984008 17.001011,7.534991C17.001011,6.9819901,17.447986,6.5349891,18.000955,6.5349891z M18.500018,0C25.943987,-2.7940308E-07 32.000018,6.055969 32.000018,13.5 32.000018,20.943969 25.943987,27 18.500018,27 15.068011,27 11.797015,25.709961 9.2879815,23.368957L10.652972,21.906982C12.789996,23.901001 15.576983,25 18.500018,25 24.841021,25 30.000018,19.841003 30.000018,13.5 30.000018,7.1589963 24.841021,1.9999997 18.500018,1.9999997 12.357171,1.9999997 7.3236094,6.8415973 7.0150104,12.909115L7.0115461,12.999974 12,12.999974 5.9850001,19.999973 0,12.999974 5.0102347,12.999974 5.0176171,12.806331C5.3798712,5.6833851,11.288613,-2.7940308E-07,18.500018,0z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                        <Path.RenderTransform>
+                                            <TransformGroup>
+                                                <TransformGroup.Children>
+                                                    <RotateTransform Angle="0" />
+                                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                </TransformGroup.Children>
+                                            </TransformGroup>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <viewModel:ViewModelLocator x:Key="ViewModelLocator"/>
+    </Application.Resources>
+    
+</Application>

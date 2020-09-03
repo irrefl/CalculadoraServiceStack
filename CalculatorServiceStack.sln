@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorServiceStack", "CalculatorServiceStack\CalculatorServiceStack.csproj", "{9B4FD8A2-1244-471F-AC1D-F194D44E2BFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorServiceStack.Web", "CalculatorServiceStack.Web\CalculatorServiceStack.Web.csproj", "{D44F0A62-D36A-4EE6-9758-9E47F7416F76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B4FD8A2-1244-471F-AC1D-F194D44E2BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4FD8A2-1244-471F-AC1D-F194D44E2BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4FD8A2-1244-471F-AC1D-F194D44E2BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4FD8A2-1244-471F-AC1D-F194D44E2BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44F0A62-D36A-4EE6-9758-9E47F7416F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44F0A62-D36A-4EE6-9758-9E47F7416F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44F0A62-D36A-4EE6-9758-9E47F7416F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44F0A62-D36A-4EE6-9758-9E47F7416F76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://172.19.10.226:8080/tfs/ctscollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CalculatorServiceStack\\CalculatorServiceStack.csproj
+		SccProjectName1 = CalculatorServiceStack
+		SccLocalPath1 = CalculatorServiceStack
+		SccProjectUniqueName2 = CalculatorServiceStack.Web\\CalculatorServiceStack.Web.csproj
+		SccProjectName2 = CalculatorServiceStack.Web
+		SccLocalPath2 = CalculatorServiceStack.Web
+	EndGlobalSection
+EndGlobal
